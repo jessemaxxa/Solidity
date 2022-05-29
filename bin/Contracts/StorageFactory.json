@@ -1,0 +1,904 @@
+{
+    "contractName": "StorageFactory",
+    "abi": [
+        {
+            "inputs": [],
+            "name": "createSimpleStorageContract",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_simpleStorageIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sfGet",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_simpleStorageIndex",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_simpleStorageNumber",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sfStore",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "simpleStorageArray",
+            "outputs": [
+                {
+                    "internalType": "contract SimpleStorage",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"createSimpleStorageContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_simpleStorageIndex\",\"type\":\"uint256\"}],\"name\":\"sfGet\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_simpleStorageIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_simpleStorageNumber\",\"type\":\"uint256\"}],\"name\":\"sfStore\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"simpleStorageArray\",\"outputs\":[{\"internalType\":\"contract SimpleStorage\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/lordrambock/BlockChain/Solidity/solidty-Workspace/Contracts/Factory.sol\":\"StorageFactory\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/lordrambock/BlockChain/Solidity/solidty-Workspace/Contracts/Factory.sol\":{\"keccak256\":\"0x4712ff5cbf26959d59a9c7407676134cf654fa0912ea1866c6852139db512f06\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c238f74e050131afba90abfaeefaba3dc760918d1ac65f803cdd4d9025b010ad\",\"dweb:/ipfs/QmQNGm61dz6EHwGWsxxHCFFCFSQzt9S2DYmZMB4cDxnM3v\"]},\"/home/lordrambock/BlockChain/Solidity/solidty-Workspace/Contracts/simple_storage.sol\":{\"keccak256\":\"0xa4d9f9bb0b75dc2f3714770bbd14a3e60d8b1c5429ba0ff337d01a2d1686e511\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0639d346b8716cc5d42aceb444a6ba090f408eae92752d7e54f079a032b9ab9a\",\"dweb:/ipfs/QmR4iT5acUc1yN6TPNjVZMzLgSDRXAPPE6VXpuVVWXEvwR\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b50610855806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631563700f146100515780631dda65411461006657806364591bf11461006e578063c5f19c201461009e575b600080fd5b61006461005f36600461027b565b6100bf565b005b61006461013d565b61008161007c36600461029d565b6101b8565b6040516001600160a01b0390911681526020015b60405180910390f35b6100b16100ac36600461029d565b6101e2565b604051908152602001610095565b600082815481106100d2576100d26102b6565b600091825260209091200154604051636057361d60e01b8152600481018390526001600160a01b0390911690636057361d90602401600060405180830381600087803b15801561012157600080fd5b505af1158015610135573d6000803e3d6000fd5b505050505050565b600060405161014b9061026e565b604051809103906000f080158015610167573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b039290921691909117905550565b600081815481106101c857600080fd5b6000918252602090912001546001600160a01b0316905081565b60008082815481106101f6576101f66102b6565b6000918252602091829020015460408051632e64cec160e01b815290516001600160a01b0390921692632e64cec1926004808401938290030181865afa158015610244573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061026891906102cc565b92915050565b61053a806102e683390190565b6000806040838503121561028e57600080fd5b50508035926020909101359150565b6000602082840312156102af57600080fd5b5035919050565b634e487b7160e01b600052603260045260246000fd5b6000602082840312156102de57600080fd5b505191905056fe608060405234801561001057600080fd5b5061051a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80632e64cec11461005c5780636057361d146100735780636f760f41146100885780638bab8dd51461009b5780639e7a13ad146100c6575b600080fd5b6000545b6040519081526020015b60405180910390f35b6100866100813660046102e6565b600055565b005b6100866100963660046103a2565b6100e7565b6100606100a93660046103e7565b805160208183018101805160028252928201919093012091525481565b6100d96100d43660046102e6565b610195565b60405161006a929190610454565b604080518082019091528181526020808201848152600180548082018255600091909152835160029091027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6810191825591518051919361016d937fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7019291019061024d565b50505080600283604051610181919061048e565b908152604051908190036020019020555050565b600181815481106101a557600080fd5b600091825260209091206002909102018054600182018054919350906101ca906104aa565b80601f01602080910402602001604051908101604052809291908181526020018280546101f6906104aa565b80156102435780601f1061021857610100808354040283529160200191610243565b820191906000526020600020905b81548152906001019060200180831161022657829003601f168201915b5050505050905082565b828054610259906104aa565b90600052602060002090601f01602090048101928261027b57600085556102c1565b82601f1061029457805160ff19168380011785556102c1565b828001600101855582156102c1579182015b828111156102c15782518255916020019190600101906102a6565b506102cd9291506102d1565b5090565b5b808211156102cd57600081556001016102d2565b6000602082840312156102f857600080fd5b5035919050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261032657600080fd5b813567ffffffffffffffff80821115610341576103416102ff565b604051601f8301601f19908116603f01168101908282118183101715610369576103696102ff565b8160405283815286602085880101111561038257600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080604083850312156103b557600080fd5b823567ffffffffffffffff8111156103cc57600080fd5b6103d885828601610315565b95602094909401359450505050565b6000602082840312156103f957600080fd5b813567ffffffffffffffff81111561041057600080fd5b61041c84828501610315565b949350505050565b60005b8381101561043f578181015183820152602001610427565b8381111561044e576000848401525b50505050565b8281526040602082015260008251806040840152610479816060850160208701610424565b601f01601f1916919091016060019392505050565b600082516104a0818460208701610424565b9190910192915050565b600181811c908216806104be57607f821691505b6020821081036104de57634e487b7160e01b600052602260045260246000fd5b5091905056fea264697066735822122099f021a0a61aef2c2cedeb0ee56927f46ba0403146348e6efd5597dbdb8edf9164736f6c634300080e0033a26469706673582212201eeac03fa4d528b7193f689bd8630a6da7b4899fabbeceff884326a5e122186264736f6c634300080e0033",
+    "deployedBytecode": "608060405234801561001057600080fd5b506004361061004c5760003560e01c80631563700f146100515780631dda65411461006657806364591bf11461006e578063c5f19c201461009e575b600080fd5b61006461005f36600461027b565b6100bf565b005b61006461013d565b61008161007c36600461029d565b6101b8565b6040516001600160a01b0390911681526020015b60405180910390f35b6100b16100ac36600461029d565b6101e2565b604051908152602001610095565b600082815481106100d2576100d26102b6565b600091825260209091200154604051636057361d60e01b8152600481018390526001600160a01b0390911690636057361d90602401600060405180830381600087803b15801561012157600080fd5b505af1158015610135573d6000803e3d6000fd5b505050505050565b600060405161014b9061026e565b604051809103906000f080158015610167573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b039290921691909117905550565b600081815481106101c857600080fd5b6000918252602090912001546001600160a01b0316905081565b60008082815481106101f6576101f66102b6565b6000918252602091829020015460408051632e64cec160e01b815290516001600160a01b0390921692632e64cec1926004808401938290030181865afa158015610244573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061026891906102cc565b92915050565b61053a806102e683390190565b6000806040838503121561028e57600080fd5b50508035926020909101359150565b6000602082840312156102af57600080fd5b5035919050565b634e487b7160e01b600052603260045260246000fd5b6000602082840312156102de57600080fd5b505191905056fe608060405234801561001057600080fd5b5061051a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80632e64cec11461005c5780636057361d146100735780636f760f41146100885780638bab8dd51461009b5780639e7a13ad146100c6575b600080fd5b6000545b6040519081526020015b60405180910390f35b6100866100813660046102e6565b600055565b005b6100866100963660046103a2565b6100e7565b6100606100a93660046103e7565b805160208183018101805160028252928201919093012091525481565b6100d96100d43660046102e6565b610195565b60405161006a929190610454565b604080518082019091528181526020808201848152600180548082018255600091909152835160029091027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6810191825591518051919361016d937fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7019291019061024d565b50505080600283604051610181919061048e565b908152604051908190036020019020555050565b600181815481106101a557600080fd5b600091825260209091206002909102018054600182018054919350906101ca906104aa565b80601f01602080910402602001604051908101604052809291908181526020018280546101f6906104aa565b80156102435780601f1061021857610100808354040283529160200191610243565b820191906000526020600020905b81548152906001019060200180831161022657829003601f168201915b5050505050905082565b828054610259906104aa565b90600052602060002090601f01602090048101928261027b57600085556102c1565b82601f1061029457805160ff19168380011785556102c1565b828001600101855582156102c1579182015b828111156102c15782518255916020019190600101906102a6565b506102cd9291506102d1565b5090565b5b808211156102cd57600081556001016102d2565b6000602082840312156102f857600080fd5b5035919050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261032657600080fd5b813567ffffffffffffffff80821115610341576103416102ff565b604051601f8301601f19908116603f01168101908282118183101715610369576103696102ff565b8160405283815286602085880101111561038257600080fd5b836020870160208301376000602085830101528094505050505092915050565b600080604083850312156103b557600080fd5b823567ffffffffffffffff8111156103cc57600080fd5b6103d885828601610315565b95602094909401359450505050565b6000602082840312156103f957600080fd5b813567ffffffffffffffff81111561041057600080fd5b61041c84828501610315565b949350505050565b60005b8381101561043f578181015183820152602001610427565b8381111561044e576000848401525b50505050565b8281526040602082015260008251806040840152610479816060850160208701610424565b601f01601f1916919091016060019392505050565b600082516104a0818460208701610424565b9190910192915050565b600181811c908216806104be57607f821691505b6020821081036104de57634e487b7160e01b600052602260045260246000fd5b5091905056fea264697066735822122099f021a0a61aef2c2cedeb0ee56927f46ba0403146348e6efd5597dbdb8edf9164736f6c634300080e0033a26469706673582212201eeac03fa4d528b7193f689bd8630a6da7b4899fabbeceff884326a5e122186264736f6c634300080e0033",
+    "sourceMap": "91:653:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "91:653:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;336:225;;;;;;:::i;:::-;;:::i;:::-;;170:160;;;:::i;122:41::-;;;;;;:::i;:::-;;:::i;:::-;;;-1:-1:-1;;;;;637:32:2;;;619:51;;607:2;592:18;122:41:0;;;;;;;;567:173;;;;;;:::i;:::-;;:::i;:::-;;;827:25:2;;;815:2;800:18;567:173:0;681:177:2;336:225:0;485:18;504:19;485:39;;;;;;;;:::i;:::-;;;;;;;;;;;463:91;;-1:-1:-1;;;463:91:0;;;;;827:25:2;;;-1:-1:-1;;;;;485:39:0;;;;463:69;;800:18:2;;463:91:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;336:225;;:::o;170:160::-;226:27;256:19;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;285:18:0;:38;;;;;;;;;;;;;;-1:-1:-1;;;;;;285:38:0;-1:-1:-1;;;;;285:38:0;;;;;;;;;;-1:-1:-1;170:160:0:o;122:41::-;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;122:41:0;;-1:-1:-1;122:41:0;:::o;567:173::-;633:7;680:18;699:19;680:39;;;;;;;;:::i;:::-;;;;;;;;;;;;658:74;;;-1:-1:-1;;;658:74:0;;;;-1:-1:-1;;;;;680:39:0;;;;658:72;;:74;;;;;;;;;;680:39;658:74;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;651:81;567:173;-1:-1:-1;;567:173:0:o;-1:-1:-1:-;;;;;;;;:::o;14:248:2:-;82:6;90;143:2;131:9;122:7;118:23;114:32;111:52;;;159:1;156;149:12;111:52;-1:-1:-1;;182:23:2;;;252:2;237:18;;;224:32;;-1:-1:-1;14:248:2:o;267:180::-;326:6;379:2;367:9;358:7;354:23;350:32;347:52;;;395:1;392;385:12;347:52;-1:-1:-1;418:23:2;;267:180;-1:-1:-1;267:180:2:o;863:127::-;924:10;919:3;915:20;912:1;905:31;955:4;952:1;945:15;979:4;976:1;969:15;995:184;1065:6;1118:2;1106:9;1097:7;1093:23;1089:32;1086:52;;;1134:1;1131;1124:12;1086:52;-1:-1:-1;1157:16:2;;995:184;-1:-1:-1;995:184:2:o",
+    "sourcePath": "/home/lordrambock/BlockChain/Solidity/solidty-Workspace/Contracts/Factory.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.14+commit.80d49f37"
+    },
+    "ast": {
+        "absolutePath": "/home/lordrambock/BlockChain/Solidity/solidty-Workspace/Contracts/Factory.sol",
+        "exportedSymbols": {
+            "SimpleStorage": [
+                123
+            ],
+            "StorageFactory": [
+                64
+            ]
+        },
+        "id": 65,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".14"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "33:24:0"
+            },
+            {
+                "absolutePath": "/home/lordrambock/BlockChain/Solidity/solidty-Workspace/Contracts/simple_storage.sol",
+                "file": "./simple_storage.sol",
+                "id": 2,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 65,
+                "sourceUnit": 124,
+                "src": "59:30:0",
+                "symbolAliases": [],
+                "unitAlias": ""
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "StorageFactory",
+                "contractDependencies": [
+                    123
+                ],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 64,
+                "linearizedBaseContracts": [
+                    64
+                ],
+                "name": "StorageFactory",
+                "nameLocation": "100:14:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "functionSelector": "64591bf1",
+                        "id": 6,
+                        "mutability": "mutable",
+                        "name": "simpleStorageArray",
+                        "nameLocation": "145:18:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 64,
+                        "src": "122:41:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_contract$_SimpleStorage_$123_$dyn_storage",
+                            "typeString": "contract SimpleStorage[]"
+                        },
+                        "typeName": {
+                            "baseType": {
+                                "id": 4,
+                                "nodeType": "UserDefinedTypeName",
+                                "pathNode": {
+                                    "id": 3,
+                                    "name": "SimpleStorage",
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 123,
+                                    "src": "122:13:0"
+                                },
+                                "referencedDeclaration": 123,
+                                "src": "122:13:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                    "typeString": "contract SimpleStorage"
+                                }
+                            },
+                            "id": 5,
+                            "nodeType": "ArrayTypeName",
+                            "src": "122:15:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_contract$_SimpleStorage_$123_$dyn_storage_ptr",
+                                "typeString": "contract SimpleStorage[]"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 23,
+                            "nodeType": "Block",
+                            "src": "216:114:0",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        11
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 11,
+                                            "mutability": "mutable",
+                                            "name": "simpleStorage",
+                                            "nameLocation": "240:13:0",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 23,
+                                            "src": "226:27:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                "typeString": "contract SimpleStorage"
+                                            },
+                                            "typeName": {
+                                                "id": 10,
+                                                "nodeType": "UserDefinedTypeName",
+                                                "pathNode": {
+                                                    "id": 9,
+                                                    "name": "SimpleStorage",
+                                                    "nodeType": "IdentifierPath",
+                                                    "referencedDeclaration": 123,
+                                                    "src": "226:13:0"
+                                                },
+                                                "referencedDeclaration": 123,
+                                                "src": "226:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                    "typeString": "contract SimpleStorage"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 16,
+                                    "initialValue": {
+                                        "arguments": [],
+                                        "expression": {
+                                            "argumentTypes": [],
+                                            "id": 14,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "nodeType": "NewExpression",
+                                            "src": "256:17:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_SimpleStorage_$123_$",
+                                                "typeString": "function () returns (contract SimpleStorage)"
+                                            },
+                                            "typeName": {
+                                                "id": 13,
+                                                "nodeType": "UserDefinedTypeName",
+                                                "pathNode": {
+                                                    "id": 12,
+                                                    "name": "SimpleStorage",
+                                                    "nodeType": "IdentifierPath",
+                                                    "referencedDeclaration": 123,
+                                                    "src": "260:13:0"
+                                                },
+                                                "referencedDeclaration": 123,
+                                                "src": "260:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                    "typeString": "contract SimpleStorage"
+                                                }
+                                            }
+                                        },
+                                        "id": 15,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "256:19:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                            "typeString": "contract SimpleStorage"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "226:49:0"
+                                },
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 20,
+                                                "name": "simpleStorage",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 11,
+                                                "src": "309:13:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                    "typeString": "contract SimpleStorage"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                    "typeString": "contract SimpleStorage"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 17,
+                                                "name": "simpleStorageArray",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 6,
+                                                "src": "285:18:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_array$_t_contract$_SimpleStorage_$123_$dyn_storage",
+                                                    "typeString": "contract SimpleStorage[] storage ref"
+                                                }
+                                            },
+                                            "id": 19,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "push",
+                                            "nodeType": "MemberAccess",
+                                            "src": "285:23:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_contract$_SimpleStorage_$123_$dyn_storage_ptr_$_t_contract$_SimpleStorage_$123_$returns$__$bound_to$_t_array$_t_contract$_SimpleStorage_$123_$dyn_storage_ptr_$",
+                                                "typeString": "function (contract SimpleStorage[] storage pointer,contract SimpleStorage)"
+                                            }
+                                        },
+                                        "id": 21,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "285:38:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 22,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "285:38:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "1dda6541",
+                        "id": 24,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "createSimpleStorageContract",
+                        "nameLocation": "179:27:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 7,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "206:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 8,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "216:0:0"
+                        },
+                        "scope": 64,
+                        "src": "170:160:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 43,
+                            "nodeType": "Block",
+                            "src": "419:142:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 40,
+                                                "name": "_simpleStorageNumber",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 28,
+                                                "src": "533:20:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "arguments": [
+                                                    {
+                                                        "arguments": [
+                                                            {
+                                                                "baseExpression": {
+                                                                    "id": 34,
+                                                                    "name": "simpleStorageArray",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": 6,
+                                                                    "src": "485:18:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_array$_t_contract$_SimpleStorage_$123_$dyn_storage",
+                                                                        "typeString": "contract SimpleStorage[] storage ref"
+                                                                    }
+                                                                },
+                                                                "id": 36,
+                                                                "indexExpression": {
+                                                                    "id": 35,
+                                                                    "name": "_simpleStorageIndex",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": 26,
+                                                                    "src": "504:19:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_uint256",
+                                                                        "typeString": "uint256"
+                                                                    }
+                                                                },
+                                                                "isConstant": false,
+                                                                "isLValue": true,
+                                                                "isPure": false,
+                                                                "lValueRequested": false,
+                                                                "nodeType": "IndexAccess",
+                                                                "src": "485:39:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                                    "typeString": "contract SimpleStorage"
+                                                                }
+                                                            }
+                                                        ],
+                                                        "expression": {
+                                                            "argumentTypes": [
+                                                                {
+                                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                                    "typeString": "contract SimpleStorage"
+                                                                }
+                                                            ],
+                                                            "id": 33,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "lValueRequested": false,
+                                                            "nodeType": "ElementaryTypeNameExpression",
+                                                            "src": "477:7:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_type$_t_address_$",
+                                                                "typeString": "type(address)"
+                                                            },
+                                                            "typeName": {
+                                                                "id": 32,
+                                                                "name": "address",
+                                                                "nodeType": "ElementaryTypeName",
+                                                                "src": "477:7:0",
+                                                                "typeDescriptions": {}
+                                                            }
+                                                        },
+                                                        "id": 37,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "kind": "typeConversion",
+                                                        "lValueRequested": false,
+                                                        "names": [],
+                                                        "nodeType": "FunctionCall",
+                                                        "src": "477:48:0",
+                                                        "tryCall": false,
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    ],
+                                                    "id": 31,
+                                                    "name": "SimpleStorage",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 123,
+                                                    "src": "463:13:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_contract$_SimpleStorage_$123_$",
+                                                        "typeString": "type(contract SimpleStorage)"
+                                                    }
+                                                },
+                                                "id": 38,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "typeConversion",
+                                                "lValueRequested": false,
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "463:63:0",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                    "typeString": "contract SimpleStorage"
+                                                }
+                                            },
+                                            "id": 39,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "store",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 91,
+                                            "src": "463:69:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
+                                                "typeString": "function (uint256) external"
+                                            }
+                                        },
+                                        "id": 41,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "463:91:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 42,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "463:91:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "1563700f",
+                        "id": 44,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "sfStore",
+                        "nameLocation": "345:7:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 29,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 26,
+                                    "mutability": "mutable",
+                                    "name": "_simpleStorageIndex",
+                                    "nameLocation": "361:19:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 44,
+                                    "src": "353:27:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 25,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "353:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 28,
+                                    "mutability": "mutable",
+                                    "name": "_simpleStorageNumber",
+                                    "nameLocation": "390:20:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 44,
+                                    "src": "382:28:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 27,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "382:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "352:59:0"
+                        },
+                        "returnParameters": {
+                            "id": 30,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "419:0:0"
+                        },
+                        "scope": 64,
+                        "src": "336:225:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 62,
+                            "nodeType": "Block",
+                            "src": "642:98:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [],
+                                        "expression": {
+                                            "argumentTypes": [],
+                                            "expression": {
+                                                "arguments": [
+                                                    {
+                                                        "arguments": [
+                                                            {
+                                                                "baseExpression": {
+                                                                    "id": 54,
+                                                                    "name": "simpleStorageArray",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": 6,
+                                                                    "src": "680:18:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_array$_t_contract$_SimpleStorage_$123_$dyn_storage",
+                                                                        "typeString": "contract SimpleStorage[] storage ref"
+                                                                    }
+                                                                },
+                                                                "id": 56,
+                                                                "indexExpression": {
+                                                                    "id": 55,
+                                                                    "name": "_simpleStorageIndex",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": 46,
+                                                                    "src": "699:19:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_uint256",
+                                                                        "typeString": "uint256"
+                                                                    }
+                                                                },
+                                                                "isConstant": false,
+                                                                "isLValue": true,
+                                                                "isPure": false,
+                                                                "lValueRequested": false,
+                                                                "nodeType": "IndexAccess",
+                                                                "src": "680:39:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                                    "typeString": "contract SimpleStorage"
+                                                                }
+                                                            }
+                                                        ],
+                                                        "expression": {
+                                                            "argumentTypes": [
+                                                                {
+                                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                                    "typeString": "contract SimpleStorage"
+                                                                }
+                                                            ],
+                                                            "id": 53,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "lValueRequested": false,
+                                                            "nodeType": "ElementaryTypeNameExpression",
+                                                            "src": "672:7:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_type$_t_address_$",
+                                                                "typeString": "type(address)"
+                                                            },
+                                                            "typeName": {
+                                                                "id": 52,
+                                                                "name": "address",
+                                                                "nodeType": "ElementaryTypeName",
+                                                                "src": "672:7:0",
+                                                                "typeDescriptions": {}
+                                                            }
+                                                        },
+                                                        "id": 57,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "kind": "typeConversion",
+                                                        "lValueRequested": false,
+                                                        "names": [],
+                                                        "nodeType": "FunctionCall",
+                                                        "src": "672:48:0",
+                                                        "tryCall": false,
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    ],
+                                                    "id": 51,
+                                                    "name": "SimpleStorage",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 123,
+                                                    "src": "658:13:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_contract$_SimpleStorage_$123_$",
+                                                        "typeString": "type(contract SimpleStorage)"
+                                                    }
+                                                },
+                                                "id": 58,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "typeConversion",
+                                                "lValueRequested": false,
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "658:63:0",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_SimpleStorage_$123",
+                                                    "typeString": "contract SimpleStorage"
+                                                }
+                                            },
+                                            "id": 59,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "retrieve",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 99,
+                                            "src": "658:72:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$",
+                                                "typeString": "function () view external returns (uint256)"
+                                            }
+                                        },
+                                        "id": 60,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "658:74:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 50,
+                                    "id": 61,
+                                    "nodeType": "Return",
+                                    "src": "651:81:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "c5f19c20",
+                        "id": 63,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "sfGet",
+                        "nameLocation": "576:5:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 47,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 46,
+                                    "mutability": "mutable",
+                                    "name": "_simpleStorageIndex",
+                                    "nameLocation": "590:19:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 63,
+                                    "src": "582:27:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 45,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "582:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "581:29:0"
+                        },
+                        "returnParameters": {
+                            "id": 50,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 49,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 63,
+                                    "src": "633:7:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 48,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "633:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "632:9:0"
+                        },
+                        "scope": 64,
+                        "src": "567:173:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 65,
+                "src": "91:653:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "33:712:0"
+    },
+    "functionHashes": {
+        "createSimpleStorageContract()": "1dda6541",
+        "sfGet(uint256)": "c5f19c20",
+        "sfStore(uint256,uint256)": "1563700f",
+        "simpleStorageArray(uint256)": "64591bf1"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "426600",
+            "executionCost": "461",
+            "totalCost": "427061"
+        },
+        "external": {
+            "createSimpleStorageContract()": "infinite",
+            "sfGet(uint256)": "infinite",
+            "sfStore(uint256,uint256)": "infinite",
+            "simpleStorageArray(uint256)": "4625"
+        }
+    }
+}
